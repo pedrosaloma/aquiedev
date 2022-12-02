@@ -26,7 +26,7 @@
         }
         
         function digital(){
-        
+        debugger
             if(validador == 1){
         
                 Swal.fire({
@@ -37,7 +37,7 @@
                     confirmButtonText: 'Save',
                   }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.reload(false);
+                                window.location.reload(true);
                             }
                             })
                                     
@@ -50,7 +50,7 @@
                     text: 'Você não é dev, saia daqui por favor!',
                 }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.reload(false);
+                                window.location.reload(true);
                             }
                             })
                 
@@ -62,21 +62,29 @@
     <title>Document</title>
 </head>
 <body>
+
     <div class="wrapper">
         <div class="logo">
             <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQEgWjsi7wHkNw/company-logo_400_400/0/1650061225458?e=1677715200&v=beta&t=rJHC95F4Sny_V68rdLzHxC601VsNCVoMJklJGpms6i0" onclick="logo()" alt="">
         </div>
         <div class="text-center mt-4 name">
-            Coloque Sua Digital aqui
+            Login
         </div>
         <form class="p-3 mt-3">
-            <div class="col-12 col-md-12 col-xl-12 offset-md-2 offset-2 ">
-                <i class="fa-solid fa-fingerprint fa-10x" onclick="digital()"></i>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="userName" id="userName" placeholder="Login">
             </div>
-            
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Senha">
+            </div>
+            <a class="btn mt-3"onclick="digital()">Login</a>
         </form>
+        <div class="text-center fs-6">
+            <a href="#" onclick="digital()">Esqueceu sua senha?</a> ou <a href="#"onclick="digital()">Cadastrar</a>
+        </div>
     </div>
-
 </body>
 </html>
 
